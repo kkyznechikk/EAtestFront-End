@@ -1,0 +1,114 @@
+@media (max-width: 861px) {
+    .page__title {
+        font-size: 64px;
+    }
+}
+
+
+@media (max-width: 769px) {
+    header {
+        margin-top: 100px;
+    }
+
+    .header__right-corner {
+        width: 20%;
+    }
+
+    .page {
+        margin-top: 166px;
+    }
+
+    .page__title {
+        font-size: 36px;
+    }
+
+    .page__subtitle {
+        font-size: 16px;
+        width: 286px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .timer {
+        width: 358px;
+        height: 82px;
+    }
+
+    .timer__number {
+        font-size: 36px;
+    }
+
+    .timer__colon {
+        font-size: 36px;
+    }
+
+    .timer__number::before {
+        width: 64px;
+        height: 40px;
+        background-image: url(img/redmedium.svg);
+        top: 40px;
+        left: -10px;
+    } 
+
+    .days::after {
+        content: "DD";
+        font-size: 12px;
+        top: 43px;
+        left: 15px;
+    }
+
+    .hours::after {
+        content: "HH";
+        font-size: 12px;
+        top: 43px;
+        left: 15px;
+    }
+
+    .minutes::after {
+        content: "MM";
+        font-size: 12px;
+        top: 43px;
+        left: 13px;
+    }
+
+    .seconds::after {
+        content: "SS";
+        font-size: 12px;
+        top: 43px;
+        left: 15px;
+    }
+
+    .event {
+        margin-top: 45px;
+        margin-bottom: 169px;
+    }
+
+    .event__text {
+        font-size: 16px;
+    }
+
+    footer {
+        height: 160px;
+    }
+
+    form {
+        max-width: 320px;
+    }
+
+    .email__input {
+        font-size: 14px; 
+        padding: 10px 50px 10px 10px; 
+    }
+
+    .submit__button {
+        width: 33px;
+        height: 33px;
+        right: -25px;
+    }
+
+    .footer__arrow {
+        width: 15px;
+        height: 15px;
+        margin-top: 2px;
+    }
+}

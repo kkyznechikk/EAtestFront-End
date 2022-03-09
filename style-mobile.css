@@ -1,0 +1,47 @@
+@media (max-width: 361px) {
+    header {
+        margin-top: 80px;
+    }
+
+    .header__logo {
+        width: 128px;
+        height: 40px;
+    }
+
+    .page {
+        margin-top: 66px;
+    }
+
+    .page__subTitle {
+        margin-top: 16px;
+    }
+
+    .event {
+        margin-bottom: 86px;
+    }
+
+    footer {
+        height: 141px;
+    }
+
+    form {
+        max-width: 240px;
+    }
+
+    .email__input {
+        font-size: 14px; 
+        padding: 10px 42px 10px 10px; 
+    }
+
+    .submit__button {
+        width: 33px;
+        height: 33px;
+        right: -25px;
+    }
+
+    .footer__arrow {
+        width: 15px;
+        height: 15px;
+        margin-top: 2px;
+    }
+}

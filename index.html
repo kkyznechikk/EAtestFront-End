@@ -6,44 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-popup.css">
+    <link rel="stylesheet" href="style-tablet.css" @media="(max-width: 861px) and (min-width: 362px)"/>
+    <link rel="stylesheet" href="style-mobile.css" @media="(max-width: 361px)"/>
     <title>EA Test Front-End</title>
 </head>
 <body>
+    <!-- Header-->
     <header>
-        <a href="">
+        <a href="/">
             <img class="header__logo" src="img/logo.svg" alt="logo">
         </a>
-        <img class="left-corner" src="img/left.svg" alt="left">
-        <img class="right-corner" src="img/right.svg" alt="right">
+        <img class="header__left-corner" src="img/left.svg" alt="left">
+        <img class="header__right-corner" src="img/right.svg" alt="right">
     </header>
+    
     <main>
+        <!-- Main title-->
         <div class="page">
             <h1 class="page__title">Under Construction</h1>
-            <p class="page__subTitle">We're making lots of improvements and will be back soon</p>
+            <p class="page__subtitle">We're making lots of improvements and will be back soon</p>
         </div>
+
+        <!-- Timer block-->
         <div class="timer">
-            <div class="timer__wrapper">
+            <div class="timer__item">
                 <div id="d" class="timer__number days"></div>
             </div>
             <div class="timer__colon">
                 :
             </div>
-            <div class="timer__wrapper">
+            <div class="timer__item">
                 <div id="h" class="timer__number hours"></div>
             </div>
             <div class="timer__colon">
                 :
             </div>
-            <div class="timer__wrapper">
+            <div class="timer__item">
                 <div id="m" class="timer__number minutes"></div>
             </div>
             <div class="timer__colon">
                 :
             </div>
-            <div class="timer__wrapper">
+            <div class="timer__item">
                 <div id="s" class="timer__number seconds"></div>
             </div>
         </div>
+
+        <!-- Event-->
         <div class="event">
             <p class="event__text">
                 Check our event page when you wait:
@@ -54,24 +64,34 @@
             </a>
         </div>
     </main>
+
+    <!-- Footer-->
     <footer>
         <form action="#">
             <input class="email__input" type="email" placeholder="Enter your Email and get notified">
-            <button class="button" type="submit">
+            <button class="submit__button" type="submit">
                 <img class="footer__arrow" src="img/arrow-right.svg" alt="arrow">
             </button>
         </form>
     </footer>
-    <div class="popup">
+
+    <!-- Popup-->
+    <div class="popup hidden">
         <div class="popup__wrapper">
             <div class="popup__content">
-                <img class="popup__cross" src="img/cross.svg" alt="cross">
-                <h2 class="popup__title">SUCCESS!</h2>
-                <div class="popup__text">You have successfully subscribed to the email newsletter</div>
-                <button class="popup__button">Close</button>
+                <button class="cross__button">
+                    <img class="popup__cross" src="img/cross.svg" alt="cross">
+                </button>
+                
+                <h2 class="popup__title"></h2>
+                <div class="popup__text"></div>
+                <button class="close__button">Close</button>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Scripts-->
+    <script src="script-timer.js"></script>
+    <script src="script-event.js"></script>
 </body>
 </html>
