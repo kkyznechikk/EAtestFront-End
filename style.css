@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     background-color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
@@ -15,15 +14,13 @@ header {
     text-align: center;
 }
 .left-corner {
-    width: 469px;
-    height: 418px;
+    width: 25%;
     position: absolute;
     top: 0;
     left: 0;
 }
 .right-corner {
-    width: 230px;
-    height: 283px;
+    width: 15%;
     position: absolute;
     top: 0;
     right: 0;
@@ -38,7 +35,9 @@ header {
    text-transform: uppercase;
    font-size: 72px;
    font-weight: 700;
+   line-height: 104%;
    color: rgba(22, 44, 78, .39);
+   text-align: center;
 }
 .page__subTitle {
     font-size: 18px;
@@ -52,32 +51,41 @@ header {
 }
 
 .timer {
-    width: 588px;
     height: 129px;
     display: flex;
     margin: 0 auto;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
-
+.timer__wrapper {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+    position: relative;
+}
 .timer__number {
     font-size: 72px;
     font-weight: 600;
     color: #162C4E;
     line-height: 100%;
     text-align: center;
-    position: relative;
+
 }
 
+.timer__numder:last-child {
+    margin-right: 0;
+}
 .timer__number::before {
     content: "";
     background-image: url(img/red.svg);
+    background-size: cover;
     width: 132px;
     height: 54px;
     display: block;
     position: absolute;
     top: 72px;
-    left: -20px;
+    left: -5px;
 }
 .days::after {
     content: "Days";
@@ -113,14 +121,17 @@ header {
     color: #FFFFFF;
     position: absolute;
     top: 63px;
-    left: 15px;
+    left: 30px;
 }
 
 .timer__colon {
     font-size: 72px;
     font-weight: 600;
     color: #162C4E;
+    margin-right: 10px;
 }
+
+
 
 .event {
     display: flex;
@@ -191,4 +202,226 @@ form {
     top: 50%;
     right: -40px;
     transform: translateY(-50%);
+    text-align: center;
 }
+.footer__arrow {
+    width: 20px;
+    height: 20px;
+}
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 44, 78, .6);
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.popup__wrapper {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup__content {
+    background-color: #fff;
+    width: 320px;
+    height: 370px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup__cross {
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    width: 24px;
+    height: 24px;
+}
+
+.popup__title {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #162C4E;
+    padding: 0 10px;
+}
+
+.popup__text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 28px;
+    padding: 0 10px;
+    color: rgba(0, 0, 0, .8);
+    text-align: center;
+}
+
+.popup__button {
+    text-decoration: none;
+    border: none;
+    max-width: 200px;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #1D4169;
+    border-radius: 40px;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+
+/*====MEDIA====*/
+
+@media (max-width: 861px) {
+    .page__title {
+        font-size: 64px;
+    }
+}
+
+
+@media (max-width: 769px) {
+    header {
+        margin-top: 100px;
+    }
+    .right-corner {
+        width: 20%;
+    }
+    .page {
+        margin-top: 166px;
+    }
+    .page__title {
+        font-size: 36px;
+    }
+    .page__subTitle {
+        font-size: 16px;
+        width: 286px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .timer {
+        width: 358px;
+        height: 82px;
+    }
+
+    .timer__number {
+        font-size: 36px;
+    }
+    .timer__colon {
+        font-size: 36px;
+    }
+    .timer__number::before {
+        width: 64px;
+        height: 40px;
+        background-image: url(img/redmedium.svg);
+        top: 40px;
+        left: -10px;
+    } 
+
+    .days::after {
+        content: "DD";
+        font-size: 12px;
+        top: 43px;
+        left: 15px;
+    }
+    .hours::after {
+        content: "HH";
+        font-size: 12px;
+        top: 43px;
+        left: 15px;
+    }
+    .minutes::after {
+        content: "MM";
+        font-size: 12px;
+        top: 43px;
+        left: 13px;
+    }
+    .seconds::after {
+        content: "SS";
+        font-size: 12px;
+        top: 43px;
+        left: 15px;
+    }
+
+    .event {
+        margin-top: 45px;
+        margin-bottom: 169px;
+    }
+    .event__text {
+        font-size: 16px;
+    }
+    footer {
+        height: 160px;
+    }
+    form {
+        max-width: 320px;
+    }
+    .email__input {
+        font-size: 14px; 
+        padding: 10px 50px 10px 10px; 
+    }
+    .button {
+        width: 33px;
+        height: 33px;
+        right: -25px;
+    }
+    .footer__arrow {
+        width: 15px;
+        height: 15px;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 361px) {
+    header {
+        margin-top: 80px;
+    }
+    .header__logo {
+        width: 128px;
+        height: 40px;
+    }
+    .page {
+        margin-top: 66px;
+    }
+    .page__subTitle {
+        margin-top: 16px;
+    }
+    .timer {
+
+    }
+    .event {
+        margin-bottom: 86px;
+    }
+    footer {
+        height: 141px;
+    }
+    form {
+        max-width: 240px;
+    }
+    .email__input {
+        font-size: 14px; 
+        padding: 10px 42px 10px 10px; 
+    }
+    .button {
+        width: 33px;
+        height: 33px;
+        right: -25px;
+    }
+    .footer__arrow {
+        width: 15px;
+        height: 15px;
+        margin-top: 2px;
+    }
+}
+
+
+
+

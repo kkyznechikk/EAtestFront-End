@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-        <img src="img/logo.svg" alt="logo">
+        <a href="">
+            <img class="header__logo" src="img/logo.svg" alt="logo">
+        </a>
         <img class="left-corner" src="img/left.svg" alt="left">
         <img class="right-corner" src="img/right.svg" alt="right">
     </header>
@@ -20,33 +22,33 @@
             <p class="page__subTitle">We're making lots of improvements and will be back soon</p>
         </div>
         <div class="timer">
-            <div class="timer__number days">
-                92
+            <div class="timer__wrapper">
+                <div id="d" class="timer__number days"></div>
             </div>
             <div class="timer__colon">
                 :
             </div>
-            <div class="timer__number hours">
-                92
+            <div class="timer__wrapper">
+                <div id="h" class="timer__number hours"></div>
             </div>
             <div class="timer__colon">
                 :
             </div>
-            <div class="timer__number minutes">
-                92
+            <div class="timer__wrapper">
+                <div id="m" class="timer__number minutes"></div>
             </div>
             <div class="timer__colon">
                 :
             </div>
-            <div class="timer__number seconds">
-                92
+            <div class="timer__wrapper">
+                <div id="s" class="timer__number seconds"></div>
             </div>
         </div>
         <div class="event">
             <p class="event__text">
                 Check our event page when you wait:
             </p>
-            <a class="event__link" href="">
+            <a class="event__link" href="https://www.youtube.com/">
                 <span class="link__text">Go to the event</span>
                 <img class="link__arrow" src="img/arrow-right.svg" alt="arrow">
             </a>
@@ -56,9 +58,20 @@
         <form action="#">
             <input class="email__input" type="email" placeholder="Enter your Email and get notified">
             <button class="button" type="submit">
-                <img src="img/arrow-right.svg" alt="arrow">
+                <img class="footer__arrow" src="img/arrow-right.svg" alt="arrow">
             </button>
         </form>
     </footer>
+    <div class="popup">
+        <div class="popup__wrapper">
+            <div class="popup__content">
+                <img class="popup__cross" src="img/cross.svg" alt="cross">
+                <h2 class="popup__title">SUCCESS!</h2>
+                <div class="popup__text">You have successfully subscribed to the email newsletter</div>
+                <button class="popup__button">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
