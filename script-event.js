@@ -1,5 +1,7 @@
 const URL = 'https://jsonplaceholder.typicode.com/posts';
-const emailRegExp = new RegExp('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$');
+const emailRegExp = new RegExp(
+    '^([a-z0-9_-]+.)*[a-z0-9_-]+@[a-z0-9_-]+(.[a-z0-9_-]+)*.[a-z]{2,6}$',
+);
 
 const popup = document.querySelector('.popup');
 const body = document.querySelector('body');
@@ -15,15 +17,15 @@ function successModalContent(email) {
     popupText.textContent = `You have successfully subscribed to the email newsletter with ${email}`;
 }
 
-function failedModalContent(error) {
-    popupTitle.textContent = 'Failed';
+function failedModalContent(error, errorName) {
+    popupTitle.textContent = errorName;
     popupText.textContent = `You have not subscribed to the email newsletter. Error: ${error}`;
 }
 
 function openModal() {
-    body.classList.add('overflow-hidden')
-    popup.classList.remove('hidden')
-    popup.classList.add('opened')
+    body.classList.add('overflow-hidden');
+    popup.classList.remove('hidden');
+    popup.classList.add('opened');
 }
 
 function hideModal() {
@@ -39,25 +41,29 @@ function subscribeForAnEvent(email) {
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-        body: JSON.stringify({ email }), 
-    }
+        body: JSON.stringify({ email }),
+    };
 
     return fetch(URL, options)
         .then((response) => response.json())
         .then((json) => {
             successModalContent(json.email);
-            openModal()
-        })
-        .catch((error) => {
-            failedModalContent(error.message);
             openModal();
         })
+        .catch((error) => {
+            failedModalContent(error.message, 'Failed');
+            openModal();
+        });
 }
 
-submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click', () => {
     if (emailRegExp.test(emailInput.value)) {
-        return subscribeForAnEvent(emailInput.value)
+        return subscribeForAnEvent(emailInput.value);
+    } else {
+        const errorMessage = `${emailInput.value} is not valid email address`;
+        failedModalContent(errorMessage, 'Error');
+        openModal();
     }
-})
-popupCrossButton.addEventListener('click', hideModal)
-popupCloseButton.addEventListener('click', hideModal)
+});
+popupCrossButton.addEventListener('click', hideModal);
+popupCloseButton.addEventListener('click', hideModal);
